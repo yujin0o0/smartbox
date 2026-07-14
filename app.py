@@ -14,9 +14,8 @@ st.subheader("우리 반의 목소리가 현실이 되는 공간입니다.")
 st.write("익명성이 철저히 보장되니, 학급의 발전과 편의를 위한 소중한 의견을 자유롭게 남겨주세요!")
 
 
-# 4. 노션 폼 링크 설정 (본인의 Tally 또는 노션 폼 링크로 변경하세요!)
-# 예: "https://tally.so/embed/xxxxxx" 형태로 넣으면 내부에 깔끔하게 들어갑니다.
-notion_form_url = "https://malleable-verdict-0bb.notion.site/a943a7db7654827b882a01be2d3c83d2?pvs=105"
+
+st.write("https://malleable-verdict-0bb.notion.site/a943a7db7654827b882a01be2d3c83d2?pvs=105")
 
 # 6. 푸터(Footer) 및 안내
 st.markdown("---")

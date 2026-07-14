@@ -18,7 +18,7 @@ st.write("https://malleable-verdict-0bb.notion.site/a943a7db7654827b882a01be2d3c
 
 # 6. 푸터(Footer) 및 안내
 st.markdown("---")
-st.caption("⚙️ 제작: [yujin] (UI/UX 및 스트림릿 기반 노코드 웹앱 프로토타입)") 이코드를 기반으로 겉 테두리를 빨간색으로 두르고 싶어 그리고 누르자마자 🚨이 이모티콘이 팡팡 터지면 좋겠어
+st.caption("⚙️ 제작: [yujin] (UI/UX 및 스트림릿 기반 노코드 웹앱 프로토타입)")
 </script>
 """, unsafe_allow_html=True)
 st.markdown("""

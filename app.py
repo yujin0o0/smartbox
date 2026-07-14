@@ -11,9 +11,6 @@ st.title("📢 3학년8반 스마트 건의함")
 st.markdown("---")
 st.subheader("우리 반의 목소리가 현실이 되는 공간입니다.")
 st.write("익명성이 철저히 보장되니, 학급의 발전과 편의를 위한 소중한 의견을 자유롭게 남겨주세요!")
-
-
-
 st.write("https://malleable-verdict-0bb.notion.site/a943a7db7654827b882a01be2d3c83d2?pvs=105")
 
 # 6. 푸터(Footer) 및 안내

@@ -11,54 +11,125 @@ st.title("📢 3학년8반 스마트 건의함")
 st.markdown("---")
 st.subheader("우리 반의 목소리가 현실이 되는 공간입니다.")
 st.write("익명성이 철저히 보장되니, 학급의 발전과 편의를 위한 소중한 의견을 자유롭게 남겨주세요!")
-st.markdown("""
-<style>
-    /* 웹앱 메인 컨테이너에 빨간색 테두리와 부드러운 그림자 효과 추가 */
-    .stAppViewMain > div {
-        border: 4px solid #FF3333;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-</style>
 
-<script>
-// 페이지가 로딩 완료되면 자동으로 실행되는 함수
-window.addEventListener('DOMContentLoaded', (event) => {
-    // 스트림릿 내부 환경에서 상위 body를 찾아 🚨 파티클을 뿌려줍니다.
-    const targetBody = window.parent.document.body;
-    
-    for (let i = 0; i < 40; i++) {
-        const p = document.createElement('div');
-        p.innerText = '🚨';
-        p.style.position = 'fixed';
-        p.style.left = '50%';
-        p.style.top = '30%'; // 화면 상단 약간 위쪽 중심에서 발사
-        p.style.transform = 'translate(-50%, -50%)';
-        p.style.fontSize = Math.random() * (35 - 20) + 20 + 'px'; // 다양한 크기
-        p.style.zIndex = '9999';
-        p.style.pointerEvents = 'none';
-        p.style.transition = 'all 1.5s cubic-bezier(0.1, 0.8, 0.3, 1)'; // 부드러운 사방 확산 효과
-        
-        targetBody.appendChild(p);
-        
-        // 360도 사방으로 랜덤하게 퍼지는 각도와 거리 계산
-        const angle = Math.random() * Math.PI * 2;
-        const velocity = Math.random() * 300 + 150; // 발사 속도 및 거리
-        const x = Math.cos(angle) * velocity;
-        const y = Math.sin(angle) * velocity;
-        
-        setTimeout(() => {
-            p.style.left = `calc(50% + ${x}px)`;
-            p.style.top = `calc(30% + ${y}px)`;
-            p.style.opacity = '0'; // 날아가면서 점점 투명해짐
-        }, 50);
-        
-        // 애니메이션 완료 후 요소 삭제
-        setTimeout(() => { p.remove(); }, 1550);
-    }
-});
+
+
+st.write("https://malleable-verdict-0bb.notion.site/a943a7db7654827b882a01be2d3c83d2?pvs=105")
+
+# 6. 푸터(Footer) 및 안내
+st.markdown("---")
+st.caption("⚙️ 제작: [yujin] (UI/UX 및 스트림릿 기반 노코드 웹앱 프로토타입)") 이코드를 기반으로 겉 테두리를 빨간색으로 두르고 싶어 그리고 누르자마자 🚨이 이모티콘이 팡팡 터지면 좋겠어
 </script>
 """, unsafe_allow_html=True)
+st.markdown("""
+<style>
+
+/* 전체 페이지 */
+.stApp{
+    border:12px solid #ff0000;
+    border-radius:25px;
+    padding:25px;
+    background:linear-gradient(135deg,#fff7f7,#ffeaea,#fff7f7);
+    animation:borderGlow 1.5s infinite alternate;
+}
+
+/* 빨간 테두리 빛나는 효과 */
+@keyframes borderGlow{
+    from{
+        box-shadow:0 0 15px red;
+    }
+    to{
+        box-shadow:0 0 45px crimson;
+    }
+}
+
+/* 제목 */
+h1{
+    text-align:center;
+    color:#d10000;
+    text-shadow:
+        0 0 8px red,
+        0 0 20px red;
+    animation:titleFlash 1s infinite alternate;
+}
+
+@keyframes titleFlash{
+    from{transform:scale(1);}
+    to{transform:scale(1.03);}
+}
+
+/* 버튼 */
+.stButton>button{
+    background:#ff2020;
+    color:white;
+    border-radius:15px;
+    border:none;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.stButton>button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px red;
+}
+
+</style>
+""", unsafe_allow_html=True)
+import random
+
+html = """
+<style>
+
+.siren{
+    position:fixed;
+    bottom:-80px;
+    font-size:55px;
+    animation:boom 3s linear forwards;
+    z-index:9999;
+}
+
+@keyframes boom{
+
+0%{
+transform:translateY(0) scale(.2) rotate(0deg);
+opacity:1;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh)
+translateX(var(--x))
+scale(2.5)
+rotate(720deg);
+opacity:0;
+}
+
+}
+
+</style>
+"""
+
+for i in range(40):
+
+    left=random.randint(0,95)
+
+    delay=random.random()*1.2
+
+    move=random.randint(-250,250)
+
+    size=random.randint(35,75)
+
+    html+=f"""
+<div class='siren'
+style='left:{left}%;
+font-size:{size}px;
+animation-delay:{delay}s;
+--x:{move}px;'>
+🚨
+</div>
+"""
+
+st.markdown(html, unsafe_allow_html=True)

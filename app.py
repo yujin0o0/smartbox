@@ -1,10 +1,9 @@
 import streamlit as st
 
-# 1. 웹페이지 기본 설정 (타이틀, 아이콘, 레이아웃)
 st.set_page_config(
-    page_title="스마트 건의함",
-    page_icon="📢",
-    layout="centered"
+    page_title="스마트 건의함",
+    page_icon="📢",
+    layout="centered"
 )
 
 # 2. 메인 화면 타이틀 및 소개

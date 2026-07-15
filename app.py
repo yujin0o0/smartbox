@@ -42,7 +42,7 @@ e.markdown("""
 FORM_URL = "https://malleable-verdict-0bb.notion.site/a943a7db7654827b882a01be2d3c83d2?pvs=105"
 
 # 메인 화면 타이틀 및 소개글
-e.markdown("<div class='main-title'>🚨스마트 건의함</div>", unsafe_allow_html=True)
+e.markdown("<div class='main-title'>📥스마트 건의함</div>", unsafe_allow_html=True)
 e.markdown("<div class='sub-title'>여러분의 소중한 의견이 더 나은 3-8반을 만듭니다. 언제든 편하게 건의해 주세요!</div>", unsafe_allow_html=True)
 
 
@@ -104,4 +104,4 @@ e.divider()
 
 # 하단 저작권 및 푸터 정보
 e.markdown("<br><br>", unsafe_allow_html=True)
-e.caption("💡 스마트 건의함 v1.0 | Created with Streamlit & GitHub")
+e.caption("💡made by yujin | Created with Streamlit & GitHub")

@@ -50,7 +50,7 @@ e.markdown("<div class='sub-title'>여러분의 소중한 의견이 더 나은 3
 e.subheader("✍️ 건의 및 안내 센터")
 
 # 탭을 생성하여 탭1에는 제출 버튼을, 탭2에는 자주 묻는 질문(FAQ)을 배치합니다.
-tab1, tab2 = e.tabs(["건의제", "🔍 자주 묻는 질문 (FAQ)"])
+tab1, tab2 = e.tabs(["📩건의제출", "🔍 자주 묻는 질문 (FAQ)"])
 
 with tab1:
     # 1. HTML & CSS를 가미하여 한눈에 띄고 클릭하고 싶게 만든 고급스러운 카드 버튼

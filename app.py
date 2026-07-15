@@ -111,17 +111,6 @@ with tab1:
     e.caption("<p style='text-align: center; color: gray;'>※ 마우스를 올리면 반응하는 반응형 하이퍼링크 버튼입니다.</p>", unsafe_allow_html=True)
 
 with tab2:
-    # 2. Streamlit의 최신 내장 링크 버튼 기능 사용 (깔끔하고 통일성 있는 모던 디자인)
-    e.write("스트림릿의 기본 테마 디자인을 유지하고 싶다면 이 버튼을 사용하세요:")
-    e.link_button(
-        "📝 건의사항 접수작성 이동하기", 
-        url=form_url, 
-        use_container_width=True,
-        type="primary"
-    )
-
-e.divider()
-
 # 사용자 신뢰감 형성을 위한 건의함 이용 안내문
 e.subheader("🔍 건의함 운영 안내 및 약속")
 
@@ -141,6 +130,9 @@ with e.expander("❓ 처리 결과는 어떻게 확인하나요?"):
     e.write("""
     검토 및 처리가 완료된 건의사항은 본 대시보드 상단 혹은 공지방을 통해 정기적으로 피드백 상황이 투명하게 업데이트될 예정입니다.
     """)
+
+e.divider()
+
 
 # 하단 저작권 및 푸터 정보
 e.markdown("<br><br>", unsafe_allow_html=True)

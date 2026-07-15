@@ -41,22 +41,41 @@ e.markdown("""
 # 사이드바 영역: 관리자가 손쉽게 폼 링크를 테스트하고 설정을 조정할 수 있도록 구성
 with e.sidebar:
     e.header("⚙️ 스마트 건의함 설정")
-    e.write(".")
+    e.write("여기에 실제 Google 폼 또는 네이버 폼 링크를 입력하여 실시간으로 확인해 보세요!")
     
     # 기본값으로 샘플 구글 폼 주소 지정 (사용자가 본인의 실제 폼 URL로 변경 가능)
     form_url = e.text_input(
         "건의사항 폼(Form) URL",
-       https://malleable-verdict-0bb.notion.site/a943a7db7654827b882a01be2d3c83d2?pvs=105"
+        value="https://docs.google.com/forms/d/e/1FAIpQLSfD38L_97S1K9fepuUjW1Q_Oa-qM0RGeR3R8T9w7L_X8D7QAA/viewform?usp=sf_link"
     )
     
     e.divider()
-
+    e.markdown("### 🚀 GitHub & Streamlit 배포 팁")
+    e.info("""
+    1. 이 코드를 `app.py`라는 이름의 파일로 저장합니다.
+    2. 본인의 GitHub 리포지토리에 업로드합니다.
+    3. [Streamlit Community Cloud](https://share.streamlit.io)에 가입 후 리포지토리를 연동하여 즉시 무료로 배포하세요!
+    """)
 
 # 메인 화면 타이틀 및 소개글
 e.markdown("<div class='main-title'>📥 스마트 소통 건의함</div>", unsafe_allow_html=True)
 e.markdown("<div class='sub-title'>여러분의 소중한 의견이 더 나은 우리를 만듭니다. 언제든 편하게 제안해 주세요.</div>", unsafe_allow_html=True)
 
+# 스마트 건의함의 신뢰도를 높이기 위한 처리 현황판 (모크업 데이터 활용)
+e.subheader("📊 실시간 건의 처리 현황")
+col1, col2, col3 = e.columns(3)
 
+with col1:
+    e.metric(label="누적 접수 건수", value="142건", delta="+5건 (이번 주)")
+with col2:
+    e.metric(label="검토 및 답변 완료", value="138건", delta="97.1% 완료율")
+with col3:
+    e.metric(label="처리 중 (검토 중)", value="4건", delta="-2건", delta_color="inverse")
+
+e.divider()
+
+# 핵심 요구사항: 단순 링크 대신 시선을 사로잡는 세련된 이동 버튼 및 FAQ 정보 제공
+e.subheader("✍️ 건의 및 안내 센터")
 
 # 탭을 생성하여 탭1에는 제출 버튼을, 탭2에는 자주 묻는 질문(FAQ)을 배치합니다.
 tab1, tab2 = e.tabs(["✨ 추천: 건의사항 제출하기", "🔍 자주 묻는 질문 (FAQ)"])
@@ -89,7 +108,7 @@ with tab1:
     </div>
     """
     e.markdown(button_html, unsafe_allow_html=True)
-
+    e.caption("<p style='text-align: center; color: gray;'>※ 마우스를 올리면 반응하는 반응형 하이퍼링크 버튼입니다.</p>", unsafe_allow_html=True)
 
 with tab2:
     # 기존 화면 하단에 있던 질문 리스트들을 탭2 내부로 깔끔하게 정리했습니다.

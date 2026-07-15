@@ -38,24 +38,8 @@ e.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 사이드바 영역: 관리자가 손쉽게 폼 링크를 테스트하고 설정을 조정할 수 있도록 구성
-with e.sidebar:
-    e.header("⚙️ 스마트 건의함 설정")
-    e.write("여기에 실제 Google 폼 또는 네이버 폼 링크를 입력하여 실시간으로 확인해 보세요!")
-    
-    # 기본값으로 샘플 구글 폼 주소 지정 (사용자가 본인의 실제 폼 URL로 변경 가능)
-    form_url = e.text_input(
-        "건의사항 폼(Form) URL",
-        value="https://docs.google.com/forms/d/e/1FAIpQLSfD38L_97S1K9fepuUjW1Q_Oa-qM0RGeR3R8T9w7L_X8D7QAA/viewform?usp=sf_link"
-    )
-    
-    e.divider()
-    e.markdown("### 🚀 GitHub & Streamlit 배포 팁")
-    e.info("""
-    1. 이 코드를 `app.py`라는 이름의 파일로 저장합니다.
-    2. 본인의 GitHub 리포지토리에 업로드합니다.
-    3. [Streamlit Community Cloud](https://share.streamlit.io)에 가입 후 리포지토리를 연동하여 즉시 무료로 배포하세요!
-    """)
+# 건의사항 실제 구글 폼 또는 네이버 폼 링크를 이곳에 붙여넣어 주세요!
+FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfD38L_97S1K9fepuUjW1Q_Oa-qM0RGeR3R8T9w7L_X8D7QAA/viewform?usp=sf_link"
 
 # 메인 화면 타이틀 및 소개글
 e.markdown("<div class='main-title'>📥 스마트 소통 건의함</div>", unsafe_allow_html=True)
@@ -86,7 +70,7 @@ with tab1:
     e.write("아래 버튼을 클릭하시면 익명이 보장되는 안전한 건의 접수 폼으로 연결됩니다.")
     button_html = f"""
     <div style="text-align: center; margin: 20px 0;">
-        <a href="{form_url}" target="_blank" style="text-decoration: none;">
+        <a href="{FORM_URL}" target="_blank" style="text-decoration: none;">
             <div style="
                 background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
                 color: white;

@@ -61,13 +61,25 @@ with e.sidebar:
 e.markdown("<div class='main-title'>📥 스마트 소통 건의함</div>", unsafe_allow_html=True)
 e.markdown("<div class='sub-title'>여러분의 소중한 의견이 더 나은 우리를 만듭니다. 언제든 편하게 제안해 주세요.</div>", unsafe_allow_html=True)
 
+# 스마트 건의함의 신뢰도를 높이기 위한 처리 현황판 (모크업 데이터 활용)
+e.subheader("📊 실시간 건의 처리 현황")
+col1, col2, col3 = e.columns(3)
+
+with col1:
+    e.metric(label="누적 접수 건수", value="142건", delta="+5건 (이번 주)")
+with col2:
+    e.metric(label="검토 및 답변 완료", value="138건", delta="97.1% 완료율")
+with col3:
+    e.metric(label="처리 중 (검토 중)", value="4건", delta="-2건", delta_color="inverse")
+
+e.divider()
 
 # 핵심 요구사항: 단순 링크 대신 시선을 사로잡는 세련된 이동 버튼 구현
 e.subheader("✍️ 건의사항 제출하기")
 e.write("아래 버튼을 클릭하시면 익명이 보장되는 안전한 건의 접수 폼으로 연결됩니다.")
 
 # 탭을 활용하여 두 가지 스타일의 버튼 제안 (스트림릿 순정 vs HTML/CSS 커스텀)
-tab1, 📩", "질문"])
+tab1, tab2 = e.tabs(["건의사항", "관련 질문"])
 
 with tab1:
     # 1. HTML & CSS를 가미하여 한눈에 띄고 클릭하고 싶게 만든 고급스러운 카드 버튼
@@ -99,7 +111,18 @@ with tab1:
     e.caption("<p style='text-align: center; color: gray;'>※ 마우스를 올리면 반응하는 반응형 하이퍼링크 버튼입니다.</p>", unsafe_allow_html=True)
 
 with tab2:
-   # 사용자 신뢰감 형성을 위한 건의함 이용 안내문
+    # 2. Streamlit의 최신 내장 링크 버튼 기능 사용 (깔끔하고 통일성 있는 모던 디자인)
+    e.write("스트림릿의 기본 테마 디자인을 유지하고 싶다면 이 버튼을 사용하세요:")
+    e.link_button(
+        "📝 건의사항 접수작성 이동하기", 
+        url=form_url, 
+        use_container_width=True,
+        type="primary"
+    )
+
+e.divider()
+
+# 사용자 신뢰감 형성을 위한 건의함 이용 안내문
 e.subheader("🔍 건의함 운영 안내 및 약속")
 
 with e.expander("❓ 건의를 제출하면 누가 확인하나요?", expanded=True):
@@ -118,11 +141,6 @@ with e.expander("❓ 처리 결과는 어떻게 확인하나요?"):
     e.write("""
     검토 및 처리가 완료된 건의사항은 본 대시보드 상단 혹은 공지방을 통해 정기적으로 피드백 상황이 투명하게 업데이트될 예정입니다.
     """)
-
-    )
-
-e.divider()
-
 
 # 하단 저작권 및 푸터 정보
 e.markdown("<br><br>", unsafe_allow_html=True)
